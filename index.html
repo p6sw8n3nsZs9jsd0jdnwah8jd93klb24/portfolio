@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Mon Portfolio</title>
+        <meta name="description" content="Portfolio de présentation et projets professionnels." />
+        <link rel="stylesheet" href="css/style.css" />
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Playfair+Display:ital,wght@1,600&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    </head>
+    <body>
+        <div class="glow-orb orb-1"></div>
+        <div class="glow-orb orb-2"></div>
+
+        <header>
+            <nav>
+                <div class="logo">Portfolio</div>
+                <ul class="nav-links">
+                    <li><a href="#hero">Accueil</a></li>
+                    <li><a href="#about">Qui suis-je</a></li>
+                    <li><a href="#projects">Projets</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Hero Section -->
+            <section id="hero" class="section-container">
+                <div class="hero-content">
+                    <h1 class="glitch-title">Développeur fullstack</h1>
+                    <p class="subtitle">Adrien BONNAMOUR</p>
+                    <a href="#projects" class="btn btn-primary">Découvrir mes projets</a>
+                </div>
+            </section>
+
+            <!-- Qui suis-je Section -->
+            <section id="about" class="section-container">
+                <h2 class="section-title">Qui suis-je</h2>
+                <div class="about-card glass-panel">
+                    <div class="about-icon">
+                        <i class="fa-solid fa-user-astronaut"></i>
+                    </div>
+                    <div class="about-text">
+                        <p>
+                            Jeune étudiant en informatique, actuellement en troisième année de BUT informatique à l'iut
+                            lyon 1 site de bourg en bresse. Passionée par l'informatique, j'ai participé a beaucoup de
+                            projets et vous pourrez en trouvez quelque uns dans ce portfolio. Grâce à ces projets j'ai
+                            une grande capacité de travail en équipe.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Projets Section -->
+            <section id="projects" class="section-container">
+                <h2 class="section-title">Mes Projets</h2>
+                <div class="projects-grid">
+                    <!-- Card EnseignantSup -->
+                    <div class="project-card glass-panel" onclick="openModal('enseignantsup')">
+                        <div class="card-image-wrapper">
+                            <img
+                                src="images/enseignantsup1.png"
+                                alt="EnseignantSup Cover"
+                                loading="lazy"
+                                class="card-img"
+                                onerror="this.src='https://via.placeholder.com/400x250/1f2833/66fcf1?text=EnseignantSup'"
+                            />
+                        </div>
+                        <div class="card-content">
+                            <h3>EnseignantSup</h3>
+                            <p class="card-summary">Outil d'aide à l'évaluation des dossiers Parcoursup.</p>
+                            <div class="tech-stack-min">
+                                <span class="tech-pill">Nodejs</span>
+                                <span class="tech-pill">Electron</span>
+                            </div>
+                            <span class="view-more">Voir les détails <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Card CRM Cannes -->
+                    <div class="project-card glass-panel" onclick="openModal('cannes')">
+                        <div class="card-image-wrapper">
+                            <img
+                                src="images/cannes1.png"
+                                alt="CRM Festival Cannes Cover"
+                                loading="lazy"
+                                class="card-img"
+                                onerror="this.src='https://via.placeholder.com/400x250/1f2833/66fcf1?text=CRM+Cannes'"
+                            />
+                        </div>
+                        <div class="card-content">
+                            <h3>CRM Festival de Cannes</h3>
+                            <p class="card-summary">
+                                Système de gestion globale et consolidation des VIP / Hébergements.
+                            </p>
+                            <div class="tech-stack-min">
+                                <span class="tech-pill">PHP</span>
+                                <span class="tech-pill">Symfony</span>
+                            </div>
+                            <span class="view-more">Voir les détails <i class="fa-solid fa-arrow-right"></i></span>
+                        </div>
+                    </div>
+
+                    <!-- Empty state for future projects -->
+                    <div class="project-card glass-panel placeholder-card">
+                        <div class="card-content centered">
+                            <i class="fa-solid fa-plus add-icon"></i>
+                            <h3>D'autres projets</h3>
+                            <p>À venir prochainement</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>© 2026 - Adrien Portfolio.</p>
+        </footer>
+
+        <!-- Project Details Modal -->
+        <div id="project-modal" class="modal-overlay">
+            <div class="modal-content glass-panel">
+                <button class="close-btn" onclick="closeModal()"><i class="fa-solid fa-xmark"></i></button>
+                <div class="modal-layout">
+                    <div class="modal-info">
+                        <h2 id="modal-title">Titre</h2>
+                        <div
+                            class="modal-meta"
+                            id="modal-team"
+                            style="
+                                color: var(--secondary-color);
+                                font-weight: 600;
+                                margin-bottom: 1rem;
+                                display: flex;
+                                align-items: center;
+                                gap: 0.5rem;
+                            "
+                        >
+                            <i class="fa-solid fa-users"></i> <span id="team-size-text">4 personnes</span>
+                        </div>
+                        <div class="tech-stack" id="modal-tech">
+                            <!-- Tech pills injected via JS -->
+                        </div>
+                        <div class="modal-description" id="modal-desc">
+                            <!-- Description injected via JS -->
+                        </div>
+                    </div>
+                    <div class="modal-gallery">
+                        <div class="carousel-container">
+                            <img id="carousel-img" src="" alt="Project screenshot" />
+                            <button class="carousel-btn prev" onclick="changeImage(-1)">
+                                <i class="fa-solid fa-chevron-left"></i>
+                            </button>
+                            <button class="carousel-btn next" onclick="changeImage(1)">
+                                <i class="fa-solid fa-chevron-right"></i>
+                            </button>
+                        </div>
+                        <div class="carousel-dots" id="carousel-dots">
+                            <!-- Dots injected via JS -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="js/script.js"></script>
+    </body>
+</html>
